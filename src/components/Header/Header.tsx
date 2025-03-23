@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import { PageLinks } from '../../types/PageLinks';
 import { AppContext } from '../../context/AppContext';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { ToggleButton } from '../ToggleButton';
 
 export const Header = () => {
   const isTablet = useMediaQuery({ minWidth: 640 });
@@ -80,8 +79,7 @@ export const Header = () => {
             <NavLink
               to="accessories"
               className={classNames(styles.header__link, {
-                [styles.header__linkActive]:
-                  activeLink === PageLinks.ACCESSORIES,
+                [styles.header__linkActive]: activeLink === PageLinks.ACCESSORIES,
               })}
               // onClick={() => handlePageLinkClick(PageLinks.ACCESSORIES)}
             >
@@ -89,44 +87,27 @@ export const Header = () => {
             </NavLink>
           </div>
 
-          <div>
-            <ToggleButton />
-          </div>
-
           <div className={styles.header__favAndCart}>
             <NavLink
               to="favourites"
-              className={classNames(
-                styles.header__favAndCartBtn,
-                styles.header__favourites,
-                {
-                  [styles.header__linkActive]:
-                    activeLink === PageLinks.FAVOURITES,
-                },
-              )}
+              className={classNames(styles.header__favAndCartBtn, styles.header__favourites, {
+                [styles.header__linkActive]: activeLink === PageLinks.FAVOURITES,
+              })}
               // onClick={() => handlePageLinkClick(PageLinks.LIKED)}
             >
               {favourites.length > 0 && (
-                <span className={styles.header__count}>
-                  {favourites.length}
-                </span>
+                <span className={styles.header__count}>{favourites.length}</span>
               )}
             </NavLink>
 
             <NavLink
               to="cart"
-              className={classNames(
-                styles.header__favAndCartBtn,
-                styles.header__cart,
-                {
-                  [styles.header__linkActive]: activeLink === PageLinks.CART,
-                },
-              )}
+              className={classNames(styles.header__favAndCartBtn, styles.header__cart, {
+                [styles.header__linkActive]: activeLink === PageLinks.CART,
+              })}
               // onClick={() => handlePageLinkClick(PageLinks.CART)}
             >
-              {cart.length > 0 && (
-                <span className={styles.header__count}>{cart.length}</span>
-              )}
+              {cart.length > 0 && <span className={styles.header__count}>{cart.length}</span>}
             </NavLink>
           </div>
         </div>
