@@ -1,54 +1,25 @@
-# React + TypeScript + Vite
+# Nice Gadgets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nice Gadgets is a small e-commerce website built with React. The site showcases three main product categories: smartphones, tablets, and accessories. It allows users to add products to their wishlist and shopping cart, making it easier to manage favorite items and purchase decisions. The project leverages modern web technologies to provide a smooth, responsive user experience.
 
-Currently, two official plugins are available:
+# Technologies Used:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**React**: Powers the user interface with a component-based structure, enabling efficient rendering and state management.
 
-## Expanding the ESLint configuration
+**Vite**: A fast build tool that enhances development speed with hot module replacement and optimized production builds.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**TypeScript**: Adds type safety to JavaScript, improving code quality and reducing errors during development.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**SCSS**: Provides advanced styling features like variables, mixins, and nesting to maintain clean and scalable styles.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**npm**: Manages project dependencies and automates various development processes, ensuring smooth workflows.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Demo link
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+[DEMO LINK](https://clavigo.github.io/Nice-Gadgets/)
+
+# How to run project locally
+
+- **Clone** the repository
+- **Install** all dependencies (npm install)
+- **Start** the project (npm start)

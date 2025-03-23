@@ -13,7 +13,7 @@ export const Footer = () => {
 
         <div className={styles.footer__contacts}>
           <a
-            href="https://github.com/clavigo/react_phone-catalog"
+            href="https://github.com/clavigo"
             className={styles.footer__contactLink}
             target="_blank"
             rel="noreferrer"
@@ -21,7 +21,7 @@ export const Footer = () => {
             Github
           </a>
           <a
-            href="https://github.com/clavigo/react_phone-catalog"
+            href="https://github.com/clavigo"
             className={styles.footer__contactLink}
             target="_blank"
             rel="noreferrer"
@@ -29,7 +29,7 @@ export const Footer = () => {
             Contacts
           </a>
           <a
-            href="https://github.com/clavigo/react_phone-catalog"
+            href="https://github.com/clavigo/Nice-Gadgets"
             className={styles.footer__contactLink}
             target="_blank"
             rel="noreferrer"
