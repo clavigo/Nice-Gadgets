@@ -1,0 +1,194 @@
+@use '@/utils/scss/variables' as var;
+@use '@/utils/scss/mixin' as mixin;
+
+.header {
+  height: var.$header-height;
+
+  top: 0;
+  position: sticky;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #fff;
+
+  z-index: 10;
+
+  box-shadow: 0 1px 0 0 rgba(226, 230, 233, 1);
+
+  @include mixin.on-tablet {
+    justify-content: inherit;
+    gap: 16px;
+  }
+
+  @include mixin.on-desktop {
+    height: var.$header-height-desktop;
+    gap: 24px;
+  }
+
+  &__logo {
+    width: 64px;
+    height: 22px;
+    margin: 0 16px;
+
+    background-image: url('/img/Logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    cursor: pointer;
+
+    @include mixin.hover(transform, scale(1.1));
+
+    @include mixin.on-desktop {
+      width: 80px;
+      height: 28px;
+    }
+  }
+
+  &__buttonsContainer {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include mixin.on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__menuButton {
+    position: relative;
+    height: 100%;
+    width: var.$header-height;
+
+    background-image: url('/img/icons/Menu.png');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+
+    box-shadow: -1px 0 0 0 rgba(226, 230, 233, 1);
+
+    @include mixin.underline-animation;
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__menuButtonClose {
+    background-image: url('/img/icons/Close.png');
+  }
+
+  &__navButtons {
+    display: flex;
+    gap: 32px;
+
+    @include mixin.on-desktop {
+      gap: 64px;
+    }
+  }
+
+  &__link {
+    height: 100%;
+
+    position: relative;
+
+    line-height: var.$header-height;
+
+    font-family: Mont-Bold, sans-serif;
+    font-size: 12px;
+
+    color: var.$secondary-color;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include mixin.hover(color, var.$primary-color);
+    @include mixin.underline-animation;
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include mixin.on-desktop {
+      line-height: var.$header-height-desktop;
+    }
+  }
+
+  &__favAndCart {
+    display: flex;
+  }
+
+  &__favAndCartBtn {
+    position: relative;
+
+    width: var.$header-height;
+
+    box-shadow: -1px 0 0 0 var.$elements-color;
+
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include mixin.underline-animation;
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include mixin.on-desktop {
+      width: var.$header-height-desktop;
+    }
+  }
+
+  &__favourites {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background-image: url('/img/icons/heart-like.png');
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background-image: url('/img/icons/cart-icon.png');
+  }
+
+  &__linkActive {
+    color: var.$primary-color;
+
+    @include mixin.underline-animation;
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  &__count {
+    width: 14px;
+    height: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 15px;
+    margin-bottom: 15px;
+
+    font-size: 9px;
+    color: var.$white-color;
+
+    background-color: var.$red-color;
+
+    border-radius: 50%;
+    border: 1px solid var.$white-color;
+  }
+}

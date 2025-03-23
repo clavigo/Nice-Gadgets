@@ -1,0 +1,18 @@
+@use '@/utils/scss/variables' as var;
+
+.favourites {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__count {
+    font-size: 14px;
+
+    color: var.$secondary-color;
+  }
+
+  &__noProducts {
+    color: var.$secondary-color;
+    margin-top: 50px;
+  }
+}

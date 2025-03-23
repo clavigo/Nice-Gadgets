@@ -1,0 +1,12 @@
+@use '@/utils/scss/mixin' as mixin;
+
+.productList {
+  margin-top: 32px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 40px;
+
+  @include mixin.page-grid;
+}

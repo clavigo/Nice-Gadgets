@@ -1,0 +1,20 @@
+@use '@/utils/scss/variables' as var;
+@use '@/utils/scss/mixin' as mixin;
+
+.pagination {
+  margin-top: 32px;
+
+  &__label {
+    font-size: 12px;
+    color: var.$secondary-color;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 40px;
+
+    @include mixin.page-grid;
+  }
+}

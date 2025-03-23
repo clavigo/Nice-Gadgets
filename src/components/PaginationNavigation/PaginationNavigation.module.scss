@@ -1,0 +1,70 @@
+@use '@/utils/scss/variables' as var;
+@use '@/utils/scss/mixin' as mixin;
+
+.pagination {
+  &__buttonSection {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    margin-top: 24px;
+  }
+
+  &__button {
+    min-width: 32px;
+    height: 32px;
+
+    background-color: var.$white-color;
+    border: 1px solid var.$elements-color;
+
+    @include mixin.hover(border-color, var.$primary-color);
+  }
+
+  &__navigationButton {
+    border: 1px solid var.$icons-color;
+
+    background-image: url('../../../public/img/icons/arrow.png');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: center;
+
+    cursor: pointer;
+
+    &Left {
+      transform: rotate(-90deg);
+    }
+
+    &Right {
+      transform: rotate(90deg);
+    }
+
+    &Disabled {
+      cursor: not-allowed;
+
+      @include mixin.hover(border-color, var.$icons-color);
+    }
+  }
+
+  &__listButtonsContainer {
+    width: 200px;
+    overflow: hidden;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__listButton {
+    font-family: Mont, sans-serif;
+    color: var.$primary-color;
+
+    cursor: pointer;
+
+    &Active {
+      background-color: var.$primary-color;
+      border-color: var.$primary-color;
+      color: var.$white-color;
+    }
+  }
+}

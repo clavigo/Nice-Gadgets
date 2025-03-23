@@ -1,0 +1,18 @@
+@use '@/utils/scss/mixin' as mixin;
+
+.page {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__img {
+    width: 100%;
+
+    @include mixin.on-tablet {
+      width: 40%;
+    }
+  }
+}

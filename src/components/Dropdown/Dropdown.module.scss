@@ -1,0 +1,78 @@
+@use '@/utils/scss/variables' as var;
+@use '@/utils/scss/mixin' as mixin;
+
+.dropdown {
+  &__label {
+    margin: 4px 0;
+    color: var.$secondary-color;
+    font-size: 12px;
+  }
+
+  &__button {
+    width: 100%;
+    height: 40px;
+
+    border: 1px solid var.$icons-color;
+    padding: 0 12px;
+
+    font-family: Mont, sans-serif;
+    font-size: 14px;
+    color: var.$primary-color;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var.$white-color;
+    background-image: url('#{var.$base-url}/img/icons/arrow-disabled-down.png');
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+
+    @include mixin.hover(border-color, var.$secondary-color);
+  }
+
+  &__buttonActive {
+    outline: none;
+    border-color: var.$primary-color;
+
+    background-image: url('#{var.$base-url}/img/icons/arrow-disabled.png');
+  }
+
+  &__itemsList {
+    display: flex;
+    flex-direction: column;
+
+    padding: 8px 0;
+
+    background-color: var.$white-color;
+
+    border: 1px solid rgba(226, 230, 233, 1);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &__item {
+    height: 32px;
+
+    color: var.$secondary-color;
+    background-color: var.$white-color;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    transition: var.$effect-duration;
+
+    &:hover {
+      color: var.$primary-color;
+      background-color: var.$hover-color;
+    }
+
+    &Active {
+      color: var.$white-color;
+      background-color: var.$primary-color;
+    }
+  }
+}

@@ -1,31 +1,55 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import './App.scss';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { Menu } from './components/Menu';
+import { AppProvider } from './context/AppContext';
+import { HomePage } from './pages/HomePage';
+import { useEffect, useState } from 'react';
+import { CategoryPage } from './pages/CategoryPage';
+import { ProductPage } from './pages/ProductPage';
+import { FavouritesPage } from './pages/FavouritesPage';
+import { CartPage } from './pages/CartPage';
+import { NotFoundPage } from './pages/NotFoundPage';
 
-function App() {
-  const [count, setCount] = useState(0);
+export const App = () => {
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+
+    setIsMenuOpen(searchParams.has('menu'));
+  }, [location]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
-  );
-}
+    <div className="App">
+      <AppProvider>
+        <Header />
 
-export default App;
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="favourites" element={<FavouritesPage />} />
+            <Route path="cart" element={<CartPage />} />
+
+            <Route path="phones" element={<CategoryPage category="phones" />} />
+            <Route path="tablets" element={<CategoryPage category="tablets" />} />
+            <Route path="accessories" element={<CategoryPage category="accessories" />} />
+
+            <Route path="product/:productId" element={<ProductPage />} />
+            <Route path="phones/:productId" element={<ProductPage />} />
+            <Route path="tablets/:productId" element={<ProductPage />} />
+            <Route path="accessories/:productId" element={<ProductPage />} />
+
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+
+          {isMenuOpen && <Menu />}
+        </main>
+
+        <Footer />
+      </AppProvider>
+    </div>
+  );
+};

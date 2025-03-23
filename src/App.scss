@@ -1,0 +1,32 @@
+@use '@/utils/scss/variables' as var;
+@use '@/utils/scss/mixin' as mixin;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Mont, sans-serif;
+
+  color: var.$primary-color;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Вся висота екрану
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+
+  @include mixin.on-desktop {
+    max-width: 1200px;
+
+    margin: 0 auto;
+  }
+}
