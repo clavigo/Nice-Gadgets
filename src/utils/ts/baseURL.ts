@@ -1,2 +1,1 @@
-export const baseUrl =
-  process.env.NODE_ENV === 'production' ? '/react_phone-catalog' : '';
+export const baseUrl = process.env.NODE_ENV === 'production' ? '/Nice-Gadgets' : '';

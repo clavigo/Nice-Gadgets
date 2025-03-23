@@ -6,10 +6,12 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/Nice-Gadgets/' : '/',
+  // base: '/Nice-Gadgets/',
   build: {
-    rollupOptions: {
-      input: '/src/index.tsx',
-    },
+    // rollupOptions: {
+    //   input: '/src/index.tsx',
+    // },
+    outDir: 'dist',
   },
   resolve: {
     alias: {
