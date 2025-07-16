@@ -1,25 +1,66 @@
-# Nice Gadgets
+# Nice Gadgets E-commerce Website
 
-Nice Gadgets is a small e-commerce website built with React. The site showcases three main product categories: smartphones, tablets, and accessories. It allows users to add products to their wishlist and shopping cart, making it easier to manage favorite items and purchase decisions. The project leverages modern web technologies to provide a smooth, responsive user experience.
+Nice Gadgets is a small e-commerce website built with React and TypeScript. The site offers a smooth shopping experience, showcasing three main product categories: smartphones, tablets, and accessories. Users can browse products, add them to a wishlist, or place them in the cart, making it easier to manage preferences and purchase decisions.
+
+The project is designed with performance and user experience in mind, featuring responsive layouts, modular architecture, and reusable components.
+
+---
 
 # Technologies Used:
 
-**React**: Powers the user interface with a component-based structure, enabling efficient rendering and state management.
+- **React** – for building dynamic, component-based UI.
+- **TypeScript** – for adding strong typing and improving developer experience.
+- **Vite** – for lightning-fast development and build performance.
+- **SCSS** – for styling with variables, mixins, and modular structure.
+- **React Router DOM** – for client-side navigation.
+- **Embla Carousel** – for smooth product carousels with autoplay.
+- **Headless UI** – for accessible and unstyled interactive components.
+- **classnames** – for conditionally applying class names.
 
-**Vite**: A fast build tool that enhances development speed with hot module replacement and optimized production builds.
+---
 
-**TypeScript**: Adds type safety to JavaScript, improving code quality and reducing errors during development.
+# Code Style Tools:
 
-**SCSS**: Provides advanced styling features like variables, mixins, and nesting to maintain clean and scalable styles.
+- **ESLint** – for maintaining code quality and catching potential issues.
+- **Prettier** – for consistent code formatting across the codebase.
+- **Husky + lint-staged** – to automatically format and lint staged files before committing, ensuring a clean Git history.
 
-**npm**: Manages project dependencies and automates various development processes, ensuring smooth workflows.
+---
 
 # Demo link
 
-[DEMO LINK](https://clavigo.github.io/Nice-Gadgets/)
+[Nice Gadgets](https://clavigo.github.io/Nice-Gadgets/)
+
+---
 
 # How to run project locally
 
-- **Clone** the repository
-- **Install** all dependencies (npm install)
-- **Start** the project (npm start)
+- **Clone** the repository:
+
+```
+git clone https://github.com/your-username/Nice-Gadgets.git
+cd Nice-Gadgets
+```
+
+- **Install dependencies**:
+
+```
+npm install
+```
+
+- **Start the development server**:
+
+```
+npm run dev
+```
+
+---
+
+# Features:
+
+- 🛒 Shopping cart functionality with persistent state
+- 💖 Wishlist to save favorite products
+- 📱 Responsive design for mobile, tablet, and desktop
+- 🔁 Product carousel with autoplay
+- ⚙️ Modular SCSS structure and utility-first component classes
+- 🔧 Strict TypeScript setup with typed props and reusable interfaces
