@@ -33,6 +33,12 @@ The project is designed with performance and user experience in mind, featuring 
 
 ---
 
+# Link to the layout
+
+- [Nice Gadgets layout](https://www.figma.com/design/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog--V2--Original?node-id=0-1&p=f&t=daDQkfTOu8oLXuim-0)
+
+---
+
 # How to run project locally
 
 - **Clone** the repository:
